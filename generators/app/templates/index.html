@@ -1,0 +1,69 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= name %></title>
+    <meta name="description" content="WebVR application">
+    <!-- This assumes your project will be responsive -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script>
+    /*
+     * Debug parameters.
+     */
+    WebVRConfig = {
+      /**
+       * webvr-polyfill configuration
+       */
+      // Forces availability of VR mode.
+      FORCE_ENABLE_VR: true, // Default: false.
+      // Complementary filter coefficient. 0 for accelerometer, 1 for gyro.
+      //K_FILTER: 0.98, // Default: 0.98.
+      // How far into the future to predict during fast motion.
+      //PREDICTION_TIME_S: 0.040, // Default: 0.040 (in seconds).
+      // Flag to disable touch panner. In case you have your own touch controls
+      //TOUCH_PANNER_DISABLED: true, // Default: false.
+      // Enable yaw panning only, disabling roll and pitch. This can be useful for
+      // panoramas with nothing interesting above or below.
+      //YAW_ONLY: true, // Default: false.
+      /**
+       * webvr-boilerplate configuration
+       */
+      // Forces distortion in VR mode.
+      //FORCE_DISTORTION: true, // Default: false.
+      // Override the distortion background color.
+      // DISTORTION_BGCOLOR: {x: 1, y: 0, z: 0, w: 1}, // Default: (0,0,0,1).
+      // Prevent distortion from happening.
+      //PREVENT_DISTORTION: true, // Default: false.
+      // Show eye centers for debugging.
+      // SHOW_EYE_CENTERS: true, // Default: false.
+      // Prevent the online DPDB from being fetched.
+      // NO_DPDB_FETCH: true,  // Default: false.
+    };
+    </script>
+
+    <script src="es6-promise/dist/es6-promise.js"></script>
+    <script src="three/three.js"></script>
+    <script src="three/examples/js/controls/VRControls.js"></script>
+    <script src="three/examples/js/effects/VREffect.js"></script>
+    <script src="webvr-polyfill/build/webvr-polyfill.js"></script>
+    <script src="webvr-boilerplate/build/webvr-manager.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
